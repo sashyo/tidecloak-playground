@@ -14,15 +14,15 @@ sed -i "s|http://localhost:3000|${CODESPACE_URL_NEXT}|g" ./test-realm.json
 sed -i "s|http://localhost:3000|${CODESPACE_URL_NEXT}|g" ./app/api/apiConfigs.js
 sed -i "s|http://localhost:8080|${CODESPACE_URL_TC}|g" ./app/api/apiConfigs.js
 
-echo "🐳 [3/3] Pulling and starting Tidecloak container..."
-docker pull docker.io/tideorg/tidecloak-dev:latest
-docker run -d \
-  --name tidecloak \
-  -p 8080:8080 \
-  -e KC_HOSTNAME=${CODESPACE_URL_TC} \
-  -e KC_BOOTSTRAP_ADMIN_USERNAME=admin \
-  -e KC_BOOTSTRAP_ADMIN_PASSWORD=password \
-  tideorg/tidecloak-dev:latest
+# echo "🐳 [3/3] Pulling and starting Tidecloak container..."
+# docker pull docker.io/tideorg/tidecloak-dev:latest
+# docker run -d \
+#   --name tidecloak \
+#   -p 8080:8080 \
+#   -e KC_HOSTNAME=${CODESPACE_URL_TC} \
+#   -e KC_BOOTSTRAP_ADMIN_USERNAME=admin \
+#   -e KC_BOOTSTRAP_ADMIN_PASSWORD=password \
+#   tideorg/tidecloak-dev:latest
   
 echo ""
 echo "✅ Tidecloak Setup complete. You can close this terminal or continue below."
